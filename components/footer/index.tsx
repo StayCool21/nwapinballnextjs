@@ -180,7 +180,7 @@ export const Footer = () => {
                         alignItems: 'center',
                      }}
                   >
-                     <CheckIcon /> We don't share your emails.
+                     <CheckIcon /> We don&apos;t share your emails.
                   </Flex>
                </Flex>
                </Flex>

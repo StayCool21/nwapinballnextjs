@@ -56,7 +56,7 @@ export const Testimonials = () => {
                                  color: '$accents9',
                               }}
                            >
-                              Jennifer Ford{' '}
+                              Jennifer Ford&apos;
                            </Text>
                            <Text
                               span
@@ -102,7 +102,7 @@ export const Testimonials = () => {
                                  color: '$accents9',
                               }}
                            >
-                              Jennifer Ford{' '}
+                              Jennifer Ford&apos;
                            </Text>
                            <Text
                               span
@@ -148,7 +148,7 @@ export const Testimonials = () => {
                                  color: '$accents9',
                               }}
                            >
-                              Jennifer Ford{' '}
+                              Jennifer Ford&apos;
                            </Text>
                            <Text
                               span

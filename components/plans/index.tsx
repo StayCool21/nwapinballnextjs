@@ -44,7 +44,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: '$4' }}>
               <Text css={{ display: 'contents' }} h2>
-                $0{' '}
+                $0&apos;
               </Text>
               <Text css={{ display: 'contents', color: '$accents8' }}>/mo</Text>
               <Button css={{ mt: '$7', mb: '$12' }}>Get Started</Button>
@@ -102,7 +102,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: '$4' }}>
               <Text css={{ display: 'contents' }} h2>
-                $19{' '}
+                $19&apos;
               </Text>
               <Text css={{ display: 'contents', color: '$accents8' }}>/mo</Text>
               <Button css={{ mt: '$7', mb: '$12' }}>Get Started</Button>
@@ -160,7 +160,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: '$4' }}>
               <Text css={{ display: 'contents' }} h2>
-                $99{' '}
+                $99&apos;
               </Text>
               <Text css={{ display: 'contents', color: '$accents8' }}>/mo</Text>
               <Button css={{ mt: '$7', mb: '$12' }}>Get Started</Button>
@@ -218,7 +218,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: '$4' }}>
               <Text css={{ display: 'contents' }} h2>
-                $199{' '}
+                $199&apos;
               </Text>
               <Text css={{ display: 'contents', color: '$accents8' }}>/mo</Text>
               <Button css={{ mt: '$7', mb: '$12' }}>Get Started</Button>

@@ -59,7 +59,7 @@ const TestimonialsPage: React.FC = () => {
                       color: '$accents9',
                     }}
                   >
-                    Jennifer Ford{' '}
+                    Jennifer Ford&apos;
                   </Text>
                   <Text
                     span
@@ -104,7 +104,7 @@ const TestimonialsPage: React.FC = () => {
                       color: '$accents9',
                     }}
                   >
-                    Jennifer Ford{' '}
+                    Jennifer Ford&apos;
                   </Text>
                   <Text
                     span
@@ -149,7 +149,7 @@ const TestimonialsPage: React.FC = () => {
                       color: '$accents9',
                     }}
                   >
-                    Jennifer Ford{' '}
+                    Jennifer Ford &apos;
                   </Text>
                   <Text
                     span

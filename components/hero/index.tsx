@@ -2,6 +2,7 @@ import {Button, Divider, Input, Text} from '@nextui-org/react';
 import React from 'react';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
+import Image from 'next/image';
 
 export const Hero = () => {
    return (
@@ -42,7 +43,7 @@ export const Hero = () => {
                         display: 'inline',
                      }}
                   >
-                     The premier pinball arcade{' '}
+                     The premier pinball arcade&apos;
                   </Text>
                   <Text
                      h1
@@ -50,7 +51,7 @@ export const Hero = () => {
                         display: 'inline',
                      }}
                   >
-                     in{' '}
+                     in&apos;
                   </Text>
                   <Text
                      h1
@@ -86,7 +87,7 @@ export const Hero = () => {
                   },
                }}
             >
-               <img src="NWAPinballFullSmallerBack.png" />
+               <Image src="NWAPinballFullSmallerBack.png" alt="NWA Pinball Logo" />
             </Box>
          </Flex>
          <Divider
