@@ -1,6 +1,5 @@
 import {Button, Divider, Input, Text} from '@nextui-org/react';
 import React from 'react';
-import {CheckIcon} from '../icons/CheckIcon';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
 
@@ -43,7 +42,7 @@ export const Hero = () => {
                         display: 'inline',
                      }}
                   >
-                     The modern landing page{' '}
+                     The premier pinball arcade{' '}
                   </Text>
                   <Text
                      h1
@@ -51,16 +50,19 @@ export const Hero = () => {
                         display: 'inline',
                      }}
                   >
-                     for{' '}
+                     in{' '}
                   </Text>
                   <Text
                      h1
                      css={{
                         display: 'inline',
+                        background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
                      }}
-                     color="primary"
+                     // color="primary"
                   >
-                     React developers
+                     NWA
                   </Text>
                </Box>
 
@@ -72,55 +74,9 @@ export const Hero = () => {
                   size={'$lg'}
                   span
                >
-                  The easiest way to build React Landing page in seconds. Save
-                  time and focus on your project.
+                  Open from 7-11 PM on Friday nights. Only $20 to experience more than 30
+                  pinball machines, from past and present.
                </Text>
-
-               <Flex
-                  css={{
-                     gap: '$8',
-                     pt: '$4',
-                  }}
-                  wrap={'wrap'}
-               >
-                  <Input placeholder="Enter your email address" size="lg" />
-                  <Button>Start Free Trial</Button>
-               </Flex>
-               <Flex
-                  wrap={'wrap'}
-                  css={{
-                     'gap': '$8',
-                     'py': '$7',
-                     '@sm': {
-                        py: '$4',
-                     },
-                  }}
-               >
-                  <Flex
-                     css={{
-                        color: '$accents7',
-                        alignItems: 'center',
-                     }}
-                  >
-                     <CheckIcon /> No credit card required.
-                  </Flex>
-                  <Flex
-                     css={{
-                        color: '$accents7',
-                        alignItems: 'center',
-                     }}
-                  >
-                     <CheckIcon /> 14-day free trial.
-                  </Flex>
-                  <Flex
-                     css={{
-                        color: '$accents7',
-                        alignItems: 'center',
-                     }}
-                  >
-                     <CheckIcon /> Cancel anytime.
-                  </Flex>
-               </Flex>
             </Box>
             <Box
                css={{
@@ -130,7 +86,7 @@ export const Hero = () => {
                   },
                }}
             >
-               <img src="mock.png" />
+               <img src="NWAPinballFullSmallerBack.png" />
             </Box>
          </Flex>
          <Divider

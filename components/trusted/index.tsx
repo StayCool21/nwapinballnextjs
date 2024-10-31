@@ -54,62 +54,6 @@ export const Trusted = () => {
                      </Text>
                   </Flex>
                </Grid>
-               <Grid sm={3} justify="center">
-                  <Flex align={'center'}>
-                     <AcmeLogo />{' '}
-                     <Text weight={'semibold'} span size={'$lg'}>
-                        Company 2
-                     </Text>
-                  </Flex>
-               </Grid>
-               <Grid sm={3} justify="center">
-                  <Flex align={'center'}>
-                     <AcmeLogo />{' '}
-                     <Text weight={'semibold'} span size={'$lg'}>
-                        Company 3
-                     </Text>
-                  </Flex>
-               </Grid>
-               <Grid sm={3} justify="center">
-                  <Flex align={'center'}>
-                     <AcmeLogo />{' '}
-                     <Text weight={'semibold'} span size={'$lg'}>
-                        Company 4
-                     </Text>
-                  </Flex>
-               </Grid>
-               <Grid sm={3} justify="center">
-                  <Flex align={'center'}>
-                     <AcmeLogo />{' '}
-                     <Text weight={'semibold'} span size={'$lg'}>
-                        Company 5
-                     </Text>
-                  </Flex>
-               </Grid>
-               <Grid sm={3} justify="center">
-                  <Flex align={'center'}>
-                     <AcmeLogo />{' '}
-                     <Text weight={'semibold'} span size={'$lg'}>
-                        Company 6
-                     </Text>
-                  </Flex>
-               </Grid>
-               <Grid sm={3} justify="center">
-                  <Flex align={'center'}>
-                     <AcmeLogo />{' '}
-                     <Text weight={'semibold'} span size={'$lg'}>
-                        Company 7
-                     </Text>
-                  </Flex>
-               </Grid>
-               <Grid sm={3} justify="center">
-                  <Flex align={'center'}>
-                     <AcmeLogo />{' '}
-                     <Text weight={'semibold'} span size={'$lg'}>
-                        Company 8
-                     </Text>
-                  </Flex>
-               </Grid>
             </Grid.Container>
          </Flex>
 

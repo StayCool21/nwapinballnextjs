@@ -3,6 +3,7 @@ import React from 'react';
 import {ModalLogin} from '../modal';
 import {icons} from './icons';
 import {AcmeLogo} from './logo';
+import { useRouter } from 'next/router';
 import {useTheme as useNextTheme} from 'next-themes';
 import {useTheme} from '@nextui-org/react';
 import {GithubIcon} from '../icons/GithubIcon';
@@ -10,9 +11,11 @@ import {GithubIcon} from '../icons/GithubIcon';
 export const Nav = () => {
    const {setTheme} = useNextTheme();
    const {isDark, type} = useTheme();
+   const router = useRouter();
    const collapseItems = [
       'Features',
-      'Customers',
+      'Home',
+      'About Us',
       'Pricing',
       'Company',
       'Legal',
@@ -31,9 +34,9 @@ export const Nav = () => {
          <Navbar.Brand>
             <Navbar.Toggle aria-label="toggle navigation" showIn="xs" />
             <AcmeLogo />
-            <Text b color="inherit" hideIn="xs">
+            {/* <Text b color="inherit" hideIn="xs">
                ACME
-            </Text>
+            </Text> */}
             <Navbar.Content
                hideIn="sm"
                css={{
@@ -116,57 +119,81 @@ export const Nav = () => {
                      </Dropdown.Item>
                   </Dropdown.Menu>
                </Dropdown>
-               <Navbar.Link isActive href="#">
-                  Customers
+               {/* <Navbar.Link isActive href="/">
+                  Home
                </Navbar.Link>
+               <Navbar.Link href = "/aboutUs">About Us</Navbar.Link>
                <Navbar.Link href="#">Pricing</Navbar.Link>
-               <Navbar.Link href="#">Company</Navbar.Link>
+               <Navbar.Link href="#">Company</Navbar.Link> */}
+               <Navbar.Link isActive={router.pathname === '/'} href="/">
+                  Home
+               </Navbar.Link>
+               <Navbar.Link isActive={router.pathname === '/aboutUs'} href="/aboutUs">
+                  About Us
+               </Navbar.Link>
+               <Navbar.Link isActive={router.pathname === '/pricing'} href="/pricing">
+                  Pricing
+               </Navbar.Link>
+               <Navbar.Link isActive={router.pathname === '/company'} href="/company">
+                  Company
+               </Navbar.Link>
             </Navbar.Content>
          </Navbar.Brand>
 
          <Navbar.Collapse>
-            {collapseItems.map((item, index) => (
-               <Navbar.CollapseItem key={item}>
-                  <Link
-                     color="inherit"
-                     css={{
-                        minWidth: '100%',
-                     }}
-                     href="#"
-                  >
-                     {item}
-                  </Link>
-               </Navbar.CollapseItem>
-            ))}
             <Navbar.CollapseItem>
                <Link
                   color="inherit"
                   css={{
-                     minWidth: '100%',
+                  minWidth: "100%",
                   }}
-                  target="_blank"
-                  href="https://github.com/Siumauricio/landing-template-nextui"
+                  href="/"
                >
-                  <GithubIcon />
+                  Home
                </Link>
             </Navbar.CollapseItem>
             <Navbar.CollapseItem>
-               <Switch
-                  checked={isDark}
-                  onChange={(e) =>
-                     setTheme(e.target.checked ? 'dark' : 'light')
-                  }
-               />
+               <Link
+                  color="inherit"
+                  css={{
+                  minWidth: "100%",
+                  }}
+                  href="/aboutUs"
+               >
+                  About Us
+               </Link>
+            </Navbar.CollapseItem>
+            <Navbar.CollapseItem>
+               <Link
+                  color="inherit"
+                  css={{
+                  minWidth: "100%",
+                  }}
+                  href="/pricing"
+               >
+                  Pricing
+               </Link>
+            </Navbar.CollapseItem>
+            <Navbar.CollapseItem>
+               <Link
+                  color="inherit"
+                  css={{
+                  minWidth: "100%",
+                  }}
+                  href="/company"
+               >
+                  Company
+               </Link>
             </Navbar.CollapseItem>
          </Navbar.Collapse>
          <Navbar.Content>
-            <ModalLogin />
+            {/* <ModalLogin /> */}
 
-            <Navbar.Item>
+            {/* <Navbar.Item>
                <Button auto flat href="#">
                   Start free trial
                </Button>
-            </Navbar.Item>
+            </Navbar.Item> */}
             <Navbar.Item hideIn={'xs'}>
                <Link
                   color="inherit"

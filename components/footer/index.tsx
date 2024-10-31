@@ -1,5 +1,6 @@
-import {Divider, Text} from '@nextui-org/react';
+import {Button, Divider, Input, Text} from '@nextui-org/react';
 import React from 'react';
+import {CheckIcon} from '../icons/CheckIcon';
 import {AcmeLogo} from '../navbar/logo';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
@@ -31,7 +32,7 @@ export const Footer = () => {
                   align={'center'}
                >
                   <AcmeLogo />
-                  <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
+                  {/* <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
                            First Link
@@ -52,7 +53,11 @@ export const Footer = () => {
                            Forth Link
                         </Text>
                      </Box>
-                  </Box>
+                  </Box> */}
+                  <Text as="p">2398 S. M Street</Text>
+                  <Text as="p">Rogers, AR 72758</Text>
+                  <Text as="p">(479) 202-0726</Text>
+                  <Text as="p">email us at nwapinball@yahoo.com</Text>
                </Flex>
                <Flex
                   css={{gap: '$5', w: '250px'}}
@@ -146,29 +151,38 @@ export const Footer = () => {
                   direction={'column'}
                   align={'center'}
                >
-                  <Text h5>Press</Text>
-                  <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           First Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Second Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Third Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Forth Link
-                        </Text>
-                     </Box>
-                  </Box>
+                  <Text h5>Subscribe</Text>
+                  <Flex
+                  css={{
+                     gap: '$8',
+                     pt: '$4',
+                     justifyContent: 'center', // Center horizontally
+                     alignItems: 'center', // Center vertically
+                  }}
+                  wrap={'wrap'}
+               >
+                  <Input placeholder="Enter your email address" size="lg" />
+                  <Button>Sign Up</Button>
+               </Flex>
+               <Flex
+                  wrap={'wrap'}
+                  css={{
+                     'gap': '$8',
+                     'py': '$7',
+                     '@sm': {
+                        py: '$4',
+                     },
+                  }}
+               >
+                  <Flex
+                     css={{
+                        color: '$accents7',
+                        alignItems: 'center',
+                     }}
+                  >
+                     <CheckIcon /> We don't share your emails.
+                  </Flex>
+               </Flex>
                </Flex>
             </Flex>
             <Box
@@ -201,17 +215,6 @@ export const Footer = () => {
                >
                   <Flex
                      css={{
-                        gap: '$10',
-                     }}
-                     wrap={'wrap'}
-                  >
-                     <AcmeLogo />
-                     <AcmeLogo />
-                     <AcmeLogo />
-                     <AcmeLogo />
-                  </Flex>
-                  <Flex
-                     css={{
                         gap: '$6',
                      }}
                   >
@@ -228,7 +231,7 @@ export const Footer = () => {
                      }}
                   >
                      <Text span css={{color: '$accents8'}}>
-                        © Copyright 2021 Acme Inc.
+                        © Copyright 2024 NWA Pinball.
                      </Text>
                   </Flex>
                </Flex>
