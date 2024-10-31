@@ -6,6 +6,7 @@ export const AcmeLogo = () => (
       alt="Acme Logo"
       width={150}
       height={25}
+      quality={100}
       className=""
    />
 );

@@ -43,7 +43,7 @@ export const Hero = () => {
                         display: 'inline',
                      }}
                   >
-                     The premier pinball arcade&apos;
+                     The premier pinball arcade&nbsp;
                   </Text>
                   <Text
                      h1
@@ -51,7 +51,7 @@ export const Hero = () => {
                         display: 'inline',
                      }}
                   >
-                     in&apos;
+                     in&nbsp;
                   </Text>
                   <Text
                      h1
@@ -87,7 +87,10 @@ export const Hero = () => {
                   },
                }}
             >
-               <Image src="NWAPinballFullSmallerBack.png" alt="NWA Pinball Logo" />
+               <Image src="/NWAPinballFullSmallerBack.png" alt="NWA Pinball Logo"
+               width={775}
+               height={500}
+               quality={100} />
             </Box>
          </Flex>
          <Divider

@@ -44,7 +44,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: '$4' }}>
               <Text css={{ display: 'contents' }} h2>
-                $0&apos;
+                $0&nbsp;
               </Text>
               <Text css={{ display: 'contents', color: '$accents8' }}>/mo</Text>
               <Button css={{ mt: '$7', mb: '$12' }}>Get Started</Button>
@@ -102,7 +102,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: '$4' }}>
               <Text css={{ display: 'contents' }} h2>
-                $19&apos;
+                $19&nbsp;
               </Text>
               <Text css={{ display: 'contents', color: '$accents8' }}>/mo</Text>
               <Button css={{ mt: '$7', mb: '$12' }}>Get Started</Button>
@@ -160,7 +160,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: '$4' }}>
               <Text css={{ display: 'contents' }} h2>
-                $99&apos;
+                $99&nbsp;
               </Text>
               <Text css={{ display: 'contents', color: '$accents8' }}>/mo</Text>
               <Button css={{ mt: '$7', mb: '$12' }}>Get Started</Button>
