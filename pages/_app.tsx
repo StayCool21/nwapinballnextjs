@@ -6,7 +6,9 @@ import {ThemeProvider as NextThemesProvider} from 'next-themes';
 const lightTheme = createTheme({
    type: 'light',
    theme: {
-      colors: {},
+      colors: {
+         background: '#e0e0e0',
+      },
    },
 });
 

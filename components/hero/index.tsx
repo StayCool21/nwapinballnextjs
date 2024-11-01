@@ -75,8 +75,8 @@ export const Hero = () => {
                   size={'$lg'}
                   span
                >
-                  Open from 7-11 PM on Friday nights. Only $20 to experience more than 30
-                  pinball machines, from past and present.
+                  Open from 7:30-11:30 PM on Friday nights. Only $20 to experience more than 20
+                  pinball machines as well as arcade games from past and present.
                </Text>
             </Box>
             <Box

@@ -4,6 +4,9 @@ import {CheckIcon} from '../icons/CheckIcon';
 import {AcmeLogo} from '../navbar/logo';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 export const Footer = () => {
    return (
@@ -54,10 +57,41 @@ export const Footer = () => {
                         </Text>
                      </Box>
                   </Box> */}
-                  <Text as="p">2398 S. M Street</Text>
-                  <Text as="p">Rogers, AR 72758</Text>
-                  <Text as="p">(479) 202-0726</Text>
-                  <Text as="p">email us at nwapinball@yahoo.com</Text>
+                  <Flex
+                     css={{
+                        alignItems: 'center',
+                        gap: '$2',
+                     }}
+                     >
+                     <FontAwesomeIcon icon={faMapMarkerAlt} />
+                     <Text as="p">2398 S. M Street</Text>
+                     </Flex>
+                     <Text as="p">Rogers, AR 72758</Text>
+                     <Flex
+                     css={{
+                        alignItems: 'center',
+                        gap: '$2',
+                     }}
+                     >
+                  </Flex>
+                  <Flex
+                     css={{
+                        alignItems: 'center',
+                        gap: '$2',
+                     }}
+                     >
+                     <FontAwesomeIcon icon={faPhone} />
+                     <Text as="p">(479) 202-0726</Text>
+                  </Flex>
+                  <Flex
+                     css={{
+                        alignItems: 'center',
+                        gap: '$2',
+                     }}
+                     >
+                     <FontAwesomeIcon icon={faEnvelope} />
+                     <Text as="p">nwapinball@yahoo.com</Text>
+               </Flex>
                </Flex>
                <Flex
                   css={{gap: '$5', w: '250px'}}
@@ -122,27 +156,23 @@ export const Footer = () => {
                   direction={'column'}
                   align={'center'}
                >
-                  <Text h5>Legal</Text>
-                  <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
+                  <Text h5 css={{ mt: '$7' }}>Follow Us</Text>
+                  <Box as={'ul'} css={{ gap: '$5', listStyle: 'none' }}>
                      <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           First Link
-                        </Text>
+                        <a href="https://www.facebook.com/people/NWA-Pinball-Club/61558384277432/" target="_blank" rel="noopener noreferrer">
+                           <FontAwesomeIcon icon={faFacebook} size="2x" />
+                        </a>
                      </Box>
                      <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Second Link
-                        </Text>
+                        <a href="https://www.instagram.com/nwapinballclub/" target="_blank" rel="noopener noreferrer">
+                           <FontAwesomeIcon icon={faInstagram} size="2x" />
+                        </a>
                      </Box>
                      <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Third Link
-                        </Text>
+                        <p>&nbsp;</p>
                      </Box>
                      <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Forth Link
-                        </Text>
+                        <p>&nbsp;</p>   
                      </Box>
                   </Box>
                </Flex>

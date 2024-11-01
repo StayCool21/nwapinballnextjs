@@ -16,7 +16,8 @@ export const Nav = () => {
       'Features',
       'Home',
       'About Us',
-      'Pricing',
+      'Events',
+      'Current Lineup',
       'Company',
       'Legal',
    ];
@@ -43,6 +44,21 @@ export const Nav = () => {
                   pl: '6rem',
                }}
             >
+               <Navbar.Link isActive={router.pathname === '/'} href="/">
+                  Home
+               </Navbar.Link>
+               <Navbar.Link isActive={router.pathname === '/aboutUs'} href="/aboutUs">
+                  About Us
+               </Navbar.Link>
+               <Navbar.Link isActive={router.pathname === '/events'} href="/events">
+                  Events
+               </Navbar.Link>
+               <Navbar.Link isActive={router.pathname === '/currentLineup'} href="/currentLineup">
+                  Current Lineup
+               </Navbar.Link>
+               <Navbar.Link isActive={router.pathname === '/company'} href="/company">
+                  Company
+               </Navbar.Link>
                <Dropdown isBordered>
                   <Navbar.Item>
                      <Dropdown.Button
@@ -119,24 +135,6 @@ export const Nav = () => {
                      </Dropdown.Item>
                   </Dropdown.Menu>
                </Dropdown>
-               {/* <Navbar.Link isActive href="/">
-                  Home
-               </Navbar.Link>
-               <Navbar.Link href = "/aboutUs">About Us</Navbar.Link>
-               <Navbar.Link href="#">Pricing</Navbar.Link>
-               <Navbar.Link href="#">Company</Navbar.Link> */}
-               <Navbar.Link isActive={router.pathname === '/'} href="/">
-                  Home
-               </Navbar.Link>
-               <Navbar.Link isActive={router.pathname === '/aboutUs'} href="/aboutUs">
-                  About Us
-               </Navbar.Link>
-               <Navbar.Link isActive={router.pathname === '/pricing'} href="/pricing">
-                  Pricing
-               </Navbar.Link>
-               <Navbar.Link isActive={router.pathname === '/company'} href="/company">
-                  Company
-               </Navbar.Link>
             </Navbar.Content>
          </Navbar.Brand>
 
@@ -169,9 +167,20 @@ export const Nav = () => {
                   css={{
                   minWidth: "100%",
                   }}
-                  href="/pricing"
+                  href="/events"
                >
-                  Pricing
+                  Events
+               </Link>
+            </Navbar.CollapseItem>
+            <Navbar.CollapseItem>
+               <Link
+                  color="inherit"
+                  css={{
+                  minWidth: "100%",
+                  }}
+                  href="/currentLineup"
+               >
+                  Current Lineup
                </Link>
             </Navbar.CollapseItem>
             <Navbar.CollapseItem>

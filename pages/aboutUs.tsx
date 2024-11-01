@@ -1,6 +1,7 @@
 import {Button, Card, Divider, Text} from '@nextui-org/react';
 import React from 'react';
 import {QuotesIcon} from '../components/icons/QuotesIcon';
+import {Box} from '../components/styles/box';
 import {Flex} from '../components/styles/flex';
 import { Layout } from '../components/navbar/layout';
 import { Nav } from '../components/navbar/navbar';
@@ -175,7 +176,55 @@ const TestimonialsPage: React.FC = () => {
             },
           }}
         >
-          <Text span css={{ color: '$blue600' }}>
+          <Box
+               css={{
+                  pt: '$13',
+
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '$5',
+               }}
+            >
+               <Box
+                  css={{
+                     maxWidth: '600px',
+                  }}
+               >
+                  <Text
+                     h1
+                     css={{
+                        display: 'inline',
+                     }}
+                  >
+                     Our Gameroom:&nbsp;
+                  </Text>
+                  <Text
+                     h1
+                     css={{
+                        display: 'inline',
+                        background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                     }}
+                     // color="primary"
+                  >
+                     Station Break
+                  </Text>
+               </Box>
+
+               <Text
+                  css={{
+                     color: '$accents8',
+                     maxWidth: '400px',
+                  }}
+                  size={'$lg'}
+                  span
+               >
+                  Open from 7-11 PM on Friday nights. Only $20 to experience more than 20
+                  pinball machines as well as arcade games from past and present.
+               </Text>
+            </Box>
+          {/* <Text span css={{ color: '$blue600' }}>
             Awesome Feature
           </Text>
           <Text h3>Testimonials</Text>
@@ -184,7 +233,7 @@ const TestimonialsPage: React.FC = () => {
             condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl, nec
             tincidunt nisl lorem eu nunc. Sed euismod, nisl ut aliquam lacinia,
           </Text>
-          <Button>Read case studies</Button>
+          <Button>Read case studies</Button> */}
         </Flex>
       </Flex>
 
