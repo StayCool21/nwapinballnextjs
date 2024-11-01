@@ -1,229 +1,89 @@
-import {Button, Card, Divider, Text} from '@nextui-org/react';
+import { Button, Card, Divider, Text, Image } from '@nextui-org/react';
 import React from 'react';
-import {QuotesIcon} from '../components/icons/QuotesIcon';
-import {Box} from '../components/styles/box';
-import {Flex} from '../components/styles/flex';
+import { QuotesIcon } from '../components/icons/QuotesIcon';
+import { Box } from '../components/styles/box';
+import { Flex } from '../components/styles/flex';
 import { Layout } from '../components/navbar/layout';
 import { Nav } from '../components/navbar/navbar';
-import {Footer} from '../components/footer';
+import { Footer } from '../components/footer';
 
-const TestimonialsPage: React.FC = () => {
+const AboutUsPage: React.FC = () => {
   return (
     <Layout>
       <Nav />
       <Flex
         direction={'column'}
         css={{
-          gap: '1rem',
+          gap: '2rem',
           justifyContent: 'center',
           alignItems: 'center',
           px: '$6',
           py: '$20',
-          flexDirection: 'column-reverse',
           '@sm': {
-            justifyContent: 'space-around',
             px: '$32',
-            flexDirection: 'row-reverse',
           },
           '@md': {
             px: '$64',
           },
         }}
       >
-        <Flex direction="column" css={{ gap: '1.5rem' }}>
-          <Card>
-            <Card.Body>
-              <Flex
-                css={{
-                  py: '$10',
-                  gap: '$5',
-                }}
-              >
-                <QuotesIcon />
-                <Flex direction={'column'} css={{ gap: '0.5rem' }}>
-                  <Text
-                    span
-                    css={{
-                      maxWidth: '400px',
-                      color: '$accents8',
-                    }}
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl,
-                  </Text>
-                  <Text
-                    span
-                    weight={'bold'}
-                    css={{
-                      maxWidth: '400px',
-                      display: 'contents',
-                      color: '$accents9',
-                    }}
-                  >
-                    Jennifer Ford&apos;
-                  </Text>
-                  <Text
-                    span
-                    css={{
-                      display: 'contents',
-                      color: '$accents8',
-                    }}
-                  >
-                    - CEO at Company
-                  </Text>
-                </Flex>
-              </Flex>
-            </Card.Body>
-          </Card>
-
-          <Card>
-            <Card.Body>
-              <Flex
-                css={{
-                  py: '$10',
-                  gap: '$5',
-                }}
-              >
-                <QuotesIcon />
-                <Flex direction={'column'} css={{ gap: '0.5rem' }}>
-                  <Text
-                    span
-                    css={{
-                      maxWidth: '400px',
-                      color: '$accents8',
-                    }}
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl,
-                  </Text>
-                  <Text
-                    span
-                    weight={'bold'}
-                    css={{
-                      maxWidth: '400px',
-                      display: 'contents',
-                      color: '$accents9',
-                    }}
-                  >
-                    Jennifer Ford&apos;
-                  </Text>
-                  <Text
-                    span
-                    css={{
-                      display: 'contents',
-                      color: '$accents8',
-                    }}
-                  >
-                    - CEO at Company
-                  </Text>
-                </Flex>
-              </Flex>
-            </Card.Body>
-          </Card>
-
-          <Card>
-            <Card.Body>
-              <Flex
-                css={{
-                  py: '$10',
-                  gap: '$5',
-                }}
-              >
-                <QuotesIcon />
-                <Flex direction={'column'} css={{ gap: '0.5rem' }}>
-                  <Text
-                    span
-                    css={{
-                      maxWidth: '400px',
-                      color: '$accents8',
-                    }}
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl,
-                  </Text>
-                  <Text
-                    span
-                    weight={'bold'}
-                    css={{
-                      maxWidth: '400px',
-                      display: 'contents',
-                      color: '$accents9',
-                    }}
-                  >
-                    Jennifer Ford &apos;
-                  </Text>
-                  <Text
-                    span
-                    css={{
-                      display: 'contents',
-                      color: '$accents8',
-                    }}
-                  >
-                    - CEO at Company
-                  </Text>
-                </Flex>
-              </Flex>
-            </Card.Body>
-          </Card>
-        </Flex>
-        <Flex
-          align={'start'}
-          direction={'column'}
+        {/* Header Section */}
+        <Box css={{ textAlign: 'center' }}>
+        <Text
+          h1
           css={{
-            alignItems: 'center',
-            '@sm': {
-              alignItems: 'start',
-            },
+            display: 'inline',
+            background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
           }}
-        >
-          <Box
-               css={{
-                  pt: '$13',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '$5',
-               }}
-            >
-               <Box
-                  css={{
-                     maxWidth: '600px',
-                  }}
-               >
-                  <Text
-                     h1
-                     css={{
-                        display: 'inline',
-                     }}
-                  >
-                     Our Gameroom:&nbsp;
-                  </Text>
-                  <Text
-                     h1
-                     css={{
-                        display: 'inline',
-                        background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                     }}
-                     // color="primary"
-                  >
-                     Station Break
-                  </Text>
-               </Box>
+          // color="primary"
+          >
+          Our Gameroom: Station Break
+          </Text>
+          {/* <Text h3>Our Gameroom</Text> */}
+        </Box>
 
-               <Text
-                  css={{
-                     color: '$accents8',
-                     maxWidth: '400px',
-                  }}
-                  size={'$lg'}
-                  span
-               >
-                  {/* Open from 7-11 PM on Friday nights. Only $20 to experience more than 20
-                  pinball machines as well as arcade games from past and present. */}
-               </Text>
-            </Box>
-        </Flex>
+        {/* Description Section */}
+        <Box css={{ maxWidth: '800px', textAlign: 'center' }}>
+          <Text>
+            Our gameroom is themed after Station Break, a large chain of arcades in the 1980&apos;s. There were around 40 locations in the USA. Station Break was owned by Time-Out back then. Today, all the original locations are long gone (the copyrights and IP has expired). Our gameroom has the Station Break logo, wall numbers, paint color and other signs are all a recreation of what an original Station Break looked like. The bottom picture is an actual Station Break from the 1980&apos;s.
+          </Text>
+          <Text h4 css={{
+            display: 'inline',
+            background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            textAlign: 'center',
+          }}>
+            Why do we have a themed gameroom, you asked? Anyone can throw a bunch of games in a room and call it an arcade.
+          </Text>
+          <Text>
+            We wanted to create a flashback experience from the 1980&apos;s. We even have a working payphone in our Station Break arcade.
+          </Text>
+        </Box>
+
+        {/* Image Gallery */}
+        <Box css={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+          <Image src="/imagesfromclient/20240627_201406.jpg" alt="Station Break 1" width={300} height={200} />
+          <Image src="/imagesfromclient/20240627_224630.jpg" alt="Station Break 2" width={300} height={200} />
+          <Image src="/imagesfromclient/20240627_224732.jpg" alt="Station Break 3" width={300} height={200} />
+          <Image src="/imagesfromclient/20240627_224824.jpg" alt="Station Break 4" width={300} height={200} />
+        </Box>
+
+        {/* Video Section */}
+        <Box css={{ maxWidth: '600px', textAlign: 'center', }}>
+          <Text h3>Watch a short video clip from the 1983 movie “Getting It On”</Text>
+          <iframe
+            width="400"
+            height="315"
+            src="https://www.youtube.com/embed/VIDEO_ID?start=1140" // Replace VIDEO_ID with the actual video ID
+            title="Station Break Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </Box>
       </Flex>
 
       <Divider css={{ position: 'absolute', inset: '0p', left: '0', mt: '$5' }} />
@@ -232,4 +92,4 @@ const TestimonialsPage: React.FC = () => {
   );
 };
 
-export default TestimonialsPage;
+export default AboutUsPage;

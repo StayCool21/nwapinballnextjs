@@ -19,7 +19,7 @@ export const Nav = () => {
       'Events',
       'Current Lineup',
       'Subscribe',
-      'Company',
+      // 'Company',
       'Legal',
    ];
    return (
@@ -60,9 +60,9 @@ export const Nav = () => {
                <Navbar.Link isActive={router.pathname === '/subscribe'} href="/subscribe">
                   Subscribe
                </Navbar.Link>
-               <Navbar.Link isActive={router.pathname === '/company'} href="/company">
+               {/* <Navbar.Link isActive={router.pathname === '/company'} href="/company">
                   Company
-               </Navbar.Link>
+               </Navbar.Link> */}
                <Dropdown isBordered>
                   <Navbar.Item>
                      <Dropdown.Button
@@ -198,7 +198,7 @@ export const Nav = () => {
                   Subscribe
                </Link>
             </Navbar.CollapseItem>
-            <Navbar.CollapseItem>
+            {/* <Navbar.CollapseItem>
                <Link
                   color="inherit"
                   css={{
@@ -208,7 +208,7 @@ export const Nav = () => {
                >
                   Company
                </Link>
-            </Navbar.CollapseItem>
+            </Navbar.CollapseItem> */}
          </Navbar.Collapse>
          <Navbar.Content>
             {/* <ModalLogin /> */}
