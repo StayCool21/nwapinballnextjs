@@ -7,6 +7,7 @@ import {Flex} from '../styles/flex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 export const Footer = () => {
    return (
@@ -35,28 +36,6 @@ export const Footer = () => {
                   align={'center'}
                >
                   <AcmeLogo />
-                  {/* <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           First Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Second Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Third Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Forth Link
-                        </Text>
-                     </Box>
-                  </Box> */}
                   <Flex
                      css={{
                         alignItems: 'center',
@@ -101,24 +80,30 @@ export const Footer = () => {
                   <Text h5>Resources</Text>
                   <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
                      <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           First Link
-                        </Text>
+                     <Text span css={{ color: '$accents8' }}>
+                        <Link href="/aboutUs" passHref>
+                           About Us
+                        </Link>
+                     </Text>
+                     </Box>
+                     <Box as={'li'}>
+                     <Text span css={{ color: '$accents8' }}>
+                        <Link href="/events" passHref>
+                           Events
+                        </Link>
+                     </Text>
                      </Box>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
-                           Second Link
+                           <Link href="/currentLineup" passHref>
+                              Current Lineup
+                           </Link>
                         </Text>
                      </Box>
                      <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Third Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Forth Link
-                        </Text>
+                        <Link href="/subscribe" passHref>
+                           Subscribe
+                        </Link>
                      </Box>
                   </Box>
                </Flex>
@@ -146,7 +131,7 @@ export const Footer = () => {
                      </Box>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
-                           Forth Link
+                           Fourth Link
                         </Text>
                      </Box>
                   </Box>
@@ -176,7 +161,7 @@ export const Footer = () => {
                      </Box>
                   </Box>
                </Flex>
-               <Flex
+               {/* <Flex
                   css={{gap: '$5', w: '250px'}}
                   direction={'column'}
                   align={'center'}
@@ -192,7 +177,14 @@ export const Footer = () => {
                   wrap={'wrap'}
                >
                   <Input placeholder="Enter your email address" size="lg" />
-                  <Button>Sign Up</Button>
+                  <Button
+                     css={{
+                        backgroundImage: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
+                        color: 'white', // Ensure the text is readable
+                     }}
+                     >
+                     Sign Up
+                  </Button>
                </Flex>
                <Flex
                   wrap={'wrap'}
@@ -213,7 +205,7 @@ export const Footer = () => {
                      <CheckIcon /> We don&apos;t share your emails.
                   </Flex>
                </Flex>
-               </Flex>
+               </Flex> */}
             </Flex>
             <Box
                css={{

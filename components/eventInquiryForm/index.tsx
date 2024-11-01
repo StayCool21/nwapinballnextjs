@@ -40,6 +40,7 @@ const EventInquiryForm: React.FC = () => {
                 fullWidth
                 label="Name"
                 required
+                placeholder="Enter your name" size="lg"
                 css={{
                   '& input': {
                     borderColor: 'var(--input-border-color)',
@@ -54,6 +55,7 @@ const EventInquiryForm: React.FC = () => {
                 fullWidth
                 type="email"
                 label="Email address"
+                placeholder="Enter your email address" size="lg"
                 required
                 value={email}
                 onChange={handleEmailChange}
@@ -73,6 +75,7 @@ const EventInquiryForm: React.FC = () => {
                 fullWidth
                 type="tel"
                 label="Phone number"
+                placeholder="Enter your phone number" size="lg"
                 required
                 css={{
                   '& input': {
@@ -87,6 +90,7 @@ const EventInquiryForm: React.FC = () => {
               <Input
                 fullWidth
                 label="Please provide a date and times you are considering"
+                placeholder="Note: NWA Pinball-sanctioned tournaments take priority" size="lg"
                 required
                 css={{
                   '& input': {
@@ -161,8 +165,10 @@ const EventInquiryForm: React.FC = () => {
             <Grid xs={12}>
               <Button
                 type="submit"
-                color="primary"
-                css={{ width: '100%' }}
+                css={{
+                  width: '100%',
+                  background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)'
+                }}
                 disabled={!isConsentGiven}
               >
                 Submit

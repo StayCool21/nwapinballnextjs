@@ -179,7 +179,6 @@ const TestimonialsPage: React.FC = () => {
           <Box
                css={{
                   pt: '$13',
-
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '$5',
@@ -220,20 +219,10 @@ const TestimonialsPage: React.FC = () => {
                   size={'$lg'}
                   span
                >
-                  Open from 7-11 PM on Friday nights. Only $20 to experience more than 20
-                  pinball machines as well as arcade games from past and present.
+                  {/* Open from 7-11 PM on Friday nights. Only $20 to experience more than 20
+                  pinball machines as well as arcade games from past and present. */}
                </Text>
             </Box>
-          {/* <Text span css={{ color: '$blue600' }}>
-            Awesome Feature
-          </Text>
-          <Text h3>Testimonials</Text>
-          <Text span css={{ color: '$accents8', maxW: '600px', pb: '$8' }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            condimentum, nisl ut aliquam lacinia, nisl nisl aliquet nisl, nec
-            tincidunt nisl lorem eu nunc. Sed euismod, nisl ut aliquam lacinia,
-          </Text>
-          <Button>Read case studies</Button> */}
         </Flex>
       </Flex>
 

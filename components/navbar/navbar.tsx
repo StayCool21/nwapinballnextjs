@@ -18,6 +18,7 @@ export const Nav = () => {
       'About Us',
       'Events',
       'Current Lineup',
+      'Subscribe',
       'Company',
       'Legal',
    ];
@@ -55,6 +56,9 @@ export const Nav = () => {
                </Navbar.Link>
                <Navbar.Link isActive={router.pathname === '/currentLineup'} href="/currentLineup">
                   Current Lineup
+               </Navbar.Link>
+               <Navbar.Link isActive={router.pathname === '/subscribe'} href="/subscribe">
+                  Subscribe
                </Navbar.Link>
                <Navbar.Link isActive={router.pathname === '/company'} href="/company">
                   Company
@@ -189,6 +193,17 @@ export const Nav = () => {
                   css={{
                   minWidth: "100%",
                   }}
+                  href="/subscribe"
+               >
+                  Subscribe
+               </Link>
+            </Navbar.CollapseItem>
+            <Navbar.CollapseItem>
+               <Link
+                  color="inherit"
+                  css={{
+                  minWidth: "100%",
+                  }}
                   href="/company"
                >
                   Company
@@ -216,12 +231,23 @@ export const Nav = () => {
                </Link>
             </Navbar.Item>
             <Navbar.Item hideIn={'xs'}>
-               <Switch
-                  checked={isDark}
-                  onChange={(e) =>
-                     setTheme(e.target.checked ? 'dark' : 'light')
-                  }
-               />
+            <Switch
+               checked={isDark}
+               onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+               css={{
+                  '--nextui-colors-primary': 'orange',
+                  '--nextui-colors-primarySolidHover': 'orange',
+                  '--nextui-colors-primarySolidContrast': 'orange',
+                  '& .nextui-switch-track': {
+                     border: '2px solid orange',
+                     borderRadius: '12px', // Adjust as needed
+                  },
+                  '& .nextui-switch-thumb': {
+                     backgroundColor: 'orange',
+                     borderRadius: '50%', // Makes the thumb circular
+                  },
+               }}
+            />
             </Navbar.Item>
          </Navbar.Content>
       </Navbar>
