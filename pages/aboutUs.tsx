@@ -6,10 +6,14 @@ import { Flex } from '../components/styles/flex';
 import { Layout } from '../components/navbar/layout';
 import { Nav } from '../components/navbar/navbar';
 import { Footer } from '../components/footer';
+import Head from 'next/head';
 
 const AboutUsPage: React.FC = () => {
   return (
     <Layout>
+      <Head>
+        <title>About Us</title>
+      </Head>
       <Nav />
       <Flex
         direction={'column'}

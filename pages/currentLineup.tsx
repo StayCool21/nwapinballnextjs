@@ -8,10 +8,14 @@ import { Layout } from '../components/navbar/layout';
 import { Nav } from '../components/navbar/navbar';
 import { Footer } from '../components/footer';
 import getMachineList from '../components/getMachineList';
+import Head from 'next/head';
 
 const currentLineup = () => {
     return (
       <Layout>
+        <Head>
+          <title>Current Lineup</title>
+        </Head>
         <Nav />
         <Flex
           css={{ py: '$20', gap: '1rem', px: '$6' }}

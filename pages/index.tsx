@@ -14,10 +14,14 @@ import {Pricing} from '../components/pricing';
 import {Faq} from '../components/faq';
 import {Trial} from '../components/trial';
 import {Footer} from '../components/footer';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
    return (
       <Layout>
+         <Head>
+            <title>NWA Pinball</title>
+         </Head>
          <Nav />
          <Box as="main">
             <Hero />

@@ -8,10 +8,14 @@ import { Layout } from '../components/navbar/layout';
 import { Nav } from '../components/navbar/navbar';
 import { Footer } from '../components/footer';
 import EventInquiryForm from '../components/eventInquiryForm';
+import Head from 'next/head';
 
 const Events = () => {
   return (
     <Layout>
+      <Head>
+        <title>Events</title>
+      </Head>
       <Nav />
       <Flex
         css={{ py: '$20', gap: '1rem', px: '$6' }}
