@@ -3,6 +3,8 @@ import React from 'react';
 import {Box} from '../styles/box';
 import {Flex} from '../styles/flex';
 import Image from 'next/image';
+import { BlurIn } from '../blurIn';
+import { FadeDown } from '../fadeDown';
 
 export const Hero = () => {
    return (
@@ -37,47 +39,51 @@ export const Hero = () => {
                      maxWidth: '600px',
                   }}
                >
-                  <Text
-                     h1
-                     css={{
-                        display: 'inline',
-                     }}
-                  >
-                     The premier pinball arcade&nbsp;
-                  </Text>
-                  <Text
-                     h1
-                     css={{
-                        display: 'inline',
-                     }}
-                  >
-                     in&nbsp;
-                  </Text>
-                  <Text
-                     h1
-                     css={{
-                        display: 'inline',
-                        background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                     }}
-                     // color="primary"
-                  >
-                     NWA
-                  </Text>
+                  <BlurIn>
+                     <Text
+                        h1
+                        css={{
+                           display: 'inline',
+                        }}
+                     >
+                        The premier pinball arcade&nbsp;
+                     </Text>
+                     <Text
+                        h1
+                        css={{
+                           display: 'inline',
+                        }}
+                     >
+                        in&nbsp;
+                     </Text>
+                     <Text
+                        h1
+                        css={{
+                           display: 'inline',
+                           background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
+                           WebkitBackgroundClip: 'text',
+                           WebkitTextFillColor: 'transparent',
+                        }}
+                        // color="primary"
+                     >
+                        NWA
+                     </Text>
+                  </BlurIn>
                </Box>
-
-               <Text
-                  css={{
-                     color: '$accents8',
-                     maxWidth: '400px',
-                  }}
-                  size={'$lg'}
-                  span
-               >
-                  Open from 7:30-11:30 PM on Friday nights. Only $20 to experience more than 20
-                  pinball machines as well as arcade games from past and present.
-               </Text>
+               
+               <FadeDown css={{maxWidth: '400px'}}>  
+                  <Text
+                     css={{
+                        color: '$accents8',
+                        maxWidth: '400px',
+                     }}
+                     size={'$lg'}
+                     span
+                  >
+                     Open from 7:30-11:30 PM on Friday nights. Only $20 to experience more than 20
+                     pinball machines as well as arcade games from past and present.
+                  </Text>
+               </FadeDown>    
             </Box>
             <Box
                css={{
