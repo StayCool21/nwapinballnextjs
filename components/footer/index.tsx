@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
+import PrivacyPolicyPage from '../required/privacyPolicy';
 
 export const Footer = () => {
    return (
@@ -243,8 +244,10 @@ export const Footer = () => {
                      <Text span css={{color: '$accents8'}}>
                         Terms of Service
                      </Text>
-                     <Text span css={{color: '$accents8'}}>
+                     <Text span css={{color: '$accents8', cursor: 'pointer'}}>
+                     <Link href="/privacy-policy" passHref>
                         Privacy Policy
+                     </Link>
                      </Text>
                   </Flex>
                   <Flex
