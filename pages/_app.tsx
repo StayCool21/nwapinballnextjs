@@ -25,7 +25,7 @@ function MyApp({Component, pageProps}: AppProps) {
          defaultTheme="system"
          attribute="class"
          value={{
-            light: lightTheme.className,
+            light: darkTheme.className,
             dark: darkTheme.className,
          }}
       >
