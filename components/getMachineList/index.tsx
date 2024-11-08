@@ -40,7 +40,7 @@ const NwaPinballMachines = () => {
 
   return (
     <div>
-      <Grid.Container gap={2} justify="center">
+      <Grid.Container gap={2} justify="center" css={{ textAlign: 'center' }}>
         {machines.map((machine) => (
           <Grid xs={12} sm={6} md={4} key={machine.id}>
             <Card css={{ p: '$6', mw: '400px' }}>
