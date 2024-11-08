@@ -30,12 +30,12 @@ export const Nav = () => {
       }}
     >
       <Navbar.Brand>
-        <Navbar.Toggle aria-label="toggle navigation" showIn="xs" />
+        <Navbar.Toggle aria-label="toggle navigation" showIn="md" />
         <AcmeLogo />
         <Navbar.Content
-          hideIn="sm"
+          hideIn="md"
           css={{
-            pl: '6rem',
+            pl: '4rem',
           }}
         >
           <Navbar.Link isActive={router.pathname === '/'} href="/">
@@ -133,64 +133,22 @@ export const Nav = () => {
       </Navbar.Brand>
 
       <Navbar.Collapse>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/"
-          >
-            Home
-          </Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/aboutUs"
-          >
-            About Us
-          </Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/events"
-          >
-            Events
-          </Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/currentLineup"
-          >
-            Current Lineup
-          </Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/subscribe"
-          >
-            Subscribe
-          </Link>
-        </Navbar.CollapseItem>
+        {collapseItems.map((item, index) => (
+          <Navbar.CollapseItem key={index}>
+            <Link
+              color="inherit"
+              css={{
+                minWidth: '100%',
+              }}
+              href={`/${item.toLowerCase().replace(' ', '')}`}
+            >
+              {item}
+            </Link>
+          </Navbar.CollapseItem>
+        ))}
       </Navbar.Collapse>
       <Navbar.Content>
-        <Navbar.Item hideIn={'xs'}>
+        <Navbar.Item hideIn={'md'}>
           <Link
             color="inherit"
             css={{
@@ -202,7 +160,7 @@ export const Nav = () => {
             <FaFacebook size={24} />
           </Link>
         </Navbar.Item>
-        <Navbar.Item hideIn={'xs'}>
+        <Navbar.Item hideIn={'md'}>
           <Link
             color="inherit"
             css={{
