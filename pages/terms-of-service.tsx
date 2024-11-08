@@ -8,16 +8,16 @@ import { Nav } from '../components/navbar/navbar';
 import { Footer } from '../components/footer';
 import Head from 'next/head';
 import { BlurIn } from '../components/blurIn';
-import PrivacyPolicyContent from '../components/required/privacyPolicy';
+import TermsOfServiceContent from '../components/required/termsOfService';
 
-const PrivacyPolicyPage: React.FC = () => {
+const TermsofServicePage: React.FC = () => {
     return (
         <Layout>
             <Head>
-                <title>Privacy Policy - NWA Pinball</title>
+                <title>Terms of Service - NWA Pinball</title>
             </Head>
             <Nav />
-            <PrivacyPolicyContent />
+            <TermsOfServiceContent />
 
             <Divider css={{ position: 'absolute', inset: '0p', left: '0', mt: '$5' }} />
             <Footer />
@@ -25,4 +25,4 @@ const PrivacyPolicyPage: React.FC = () => {
     );
 };
 
-export default PrivacyPolicyPage;
+export default TermsofServicePage;

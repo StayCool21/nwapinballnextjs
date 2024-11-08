@@ -242,14 +242,14 @@ export const Footer = () => {
                      }}
                   >
                      <Text span css={{color: '$accents8'}}>
-                        <a href="/terms" target="_blank" rel="noopener noreferrer">
+                        <Link href="/terms-of-service" passHref>
                            Terms of Service
-                        </a>
+                        </Link>
                      </Text>
-                     <Text span css={{color: '$accents8'}}>
-                        <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                     <Text span css={{color: '$accents8', cursor: 'pointer'}}>
+                        <Link href="/privacy-policy" passHref>
                            Privacy Policy
-                        </a>
+                        </Link>
                      </Text>
                   </Flex>
                   <Flex
