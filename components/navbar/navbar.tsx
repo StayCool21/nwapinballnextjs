@@ -8,15 +8,24 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa'; // Import Facebook and
 
 export const Nav = () => {
   const router = useRouter();
-  const collapseItems = [
-    'Features',
+  const collapseItems: (keyof typeof menuItems)[] = [
+    // 'Features',
     'Home',
     'About Us',
     'Events',
     'Current Lineup',
     'Subscribe',
-    'Legal',
+    // 'Legal',
   ];
+
+  const menuItems = {
+    'Features': '/features',
+    'Home': '/',
+    'About Us': '/aboutUs',
+    'Events': '/events',
+    'Current Lineup': '/currentLineup',
+    'Subscribe': '/subscribe',
+  };
 
   return (
     <Navbar
@@ -140,7 +149,7 @@ export const Nav = () => {
               css={{
                 minWidth: '100%',
               }}
-              href={`/${item.toLowerCase().replace(' ', '')}`}
+              href={menuItems[item]}
             >
               {item}
             </Link>
