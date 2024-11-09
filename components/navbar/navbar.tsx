@@ -164,7 +164,7 @@ export const Nav = () => {
               minWidth: '100%',
             }}
             target="_blank"
-            href="https://www.facebook.com/yourpage"
+            href="https://www.facebook.com/people/NWA-Pinball-Club/61558384277432/"
           >
             <FaFacebook size={24} />
           </Link>
@@ -176,7 +176,7 @@ export const Nav = () => {
               minWidth: '100%',
             }}
             target="_blank"
-            href="https://www.instagram.com/yourpage"
+            href="https://www.instagram.com/nwapinballclub/"
           >
             <FaInstagram size={24} />
           </Link>
