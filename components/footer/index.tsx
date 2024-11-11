@@ -78,7 +78,6 @@ export const Footer = () => {
                   direction={'column'}
                   align={'center'}
                >
-                  <Text h5>Resources</Text>
                   <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
                      <Box as={'li'}>
                      <Text span css={{ color: '$accents8' }}>
@@ -113,27 +112,22 @@ export const Footer = () => {
                   direction={'column'}
                   align={'center'}
                >
-                  <Text h5>Contact</Text>
+                  <Text h5>Software Engineers</Text>
                   <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
-                           First Link
+                           <a href="https://staycool21.github.io">Luke Welsh</a>
                         </Text>
                      </Box>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
-                           Second Link
-                        </Text>
+                              <a href="https://logannitzsche.com">Logan Nitzsche</a>
+                           </Text>
                      </Box>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
-                           Third Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Fourth Link
-                        </Text>
+                              <a href="https://www.linkedin.com/in/kevin-endrijaitis-38a8a4294">Kevin Endrijaitis</a>
+                           </Text>
                      </Box>
                   </Box>
                </Flex>
