@@ -39,10 +39,18 @@ export const Nav = () => {
       }}
     >
       <Navbar.Brand>
-        <Navbar.Toggle aria-label="toggle navigation" showIn="md" />
+        <Navbar.Toggle aria-label="toggle navigation" 
+        css={{
+          '@media (max-width: 960px)': {
+            display: 'block',
+          },
+          '@media (min-width: 961px)': {
+            display: 'none',
+          },
+        }} />
         <AcmeLogo />
         <Navbar.Content
-          hideIn="md"
+          hideIn="sm"
           css={{
             pl: '4rem',
           }}
@@ -157,7 +165,7 @@ export const Nav = () => {
         ))}
       </Navbar.Collapse>
       <Navbar.Content>
-        <Navbar.Item hideIn={'md'}>
+        <Navbar.Item hideIn={'sm'}>
           <Link
             color="inherit"
             css={{
@@ -169,7 +177,7 @@ export const Nav = () => {
             <FaFacebook size={24} />
           </Link>
         </Navbar.Item>
-        <Navbar.Item hideIn={'md'}>
+        <Navbar.Item hideIn={'sm'}>
           <Link
             color="inherit"
             css={{
