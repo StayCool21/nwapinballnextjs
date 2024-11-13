@@ -1,5 +1,5 @@
 import { Button, Card, Divider, Grid, Text } from '@nextui-org/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CheckIcon } from '../components/icons/CheckIcon';
 import { QuotesIcon } from '../components/icons/QuotesIcon';
 import { Box } from '../components/styles/box';
@@ -12,7 +12,19 @@ import SubscribeInquiryForm from '../components/subscribeForm';
 import Head from 'next/head';
 import { BlurIn } from '../components/blurIn';
 
+
 const Events = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://nwa-pinball.kit.com/468594e9bf/index.js';
+    script.async = true;
+    script.setAttribute('data-uid', '468594e9bf');
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <Layout>
       <Head>
@@ -55,7 +67,8 @@ const Events = () => {
           wrap={'wrap'}
           justify={'center'}
         >
-            <SubscribeInquiryForm />
+            {/* <SubscribeInquiryForm /> */}
+            <script async data-uid="468594e9bf" src="https://nwa-pinball.kit.com/468594e9bf/index.js"></script>
         </Flex>
 
         {/* <Divider
