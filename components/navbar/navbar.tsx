@@ -12,7 +12,7 @@ export const Nav = () => {
     // 'Features',
     'Home',
     'About Us',
-    'Events',
+    'Parties',
     'Current Lineup',
     'Subscribe',
     'Announcements'
@@ -23,7 +23,7 @@ export const Nav = () => {
     'Features': '/features',
     'Home': '/',
     'About Us': '/aboutUs',
-    'Events': '/events',
+    'Parties': '/events',
     'Current Lineup': '/currentLineup',
     'Subscribe': '/subscribe',
     'Announcements': '/announcements',
@@ -64,7 +64,7 @@ export const Nav = () => {
             About Us
           </Navbar.Link>
           <Navbar.Link isActive={router.pathname === '/events'} href="/events">
-            Events
+            Parties
           </Navbar.Link>
           <Navbar.Link isActive={router.pathname === '/currentLineup'} href="/currentLineup">
             Current Lineup
