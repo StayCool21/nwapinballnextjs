@@ -15,8 +15,7 @@ export const Nav = () => {
     'Events',
     'Current Lineup',
     'Subscribe',
-<<<<<<< Updated upstream
-    'Legal',
+    'Announcements'
     // 'Legal',
   ];
 
@@ -27,33 +26,9 @@ export const Nav = () => {
     'Events': '/events',
     'Current Lineup': '/currentLineup',
     'Subscribe': '/subscribe',
+    'Announcements': '/announcements',
   };
 
-  const menuItems = {
-    'Features': '/features',
-    'Home': '/',
-    'About Us': '/aboutUs',
-    'Events': '/events',
-    'Current Lineup': '/currentLineup',
-    'Subscribe': '/subscribe',
-  };
-
-=======
-    'Announcements',
-    // 'Legal',
-  ];
-
-  const menuItems = {
-    'Features': '/features',
-    'Home': '/',
-    'About Us': '/aboutUs',
-    'Events': '/events',
-    'Current Lineup': '/currentLineup',
-    'Subscribe': '/subscribe',
-    'Announcements': '/announcements'
-  };
-
->>>>>>> Stashed changes
   return (
     <Navbar
       isBordered
