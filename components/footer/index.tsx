@@ -89,7 +89,7 @@ export const Footer = () => {
                      <Box as={'li'}>
                      <Text span css={{ color: '$accents8' }}>
                         <Link href="/events" passHref>
-                           Events
+                           Parties
                         </Link>
                      </Text>
                      </Box>
