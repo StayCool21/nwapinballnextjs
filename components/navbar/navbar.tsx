@@ -15,9 +15,26 @@ export const Nav = () => {
     'Events',
     'Current Lineup',
     'Subscribe',
+<<<<<<< Updated upstream
     'Legal',
   ];
 
+=======
+    'Announcements',
+    // 'Legal',
+  ];
+
+  const menuItems = {
+    'Features': '/features',
+    'Home': '/',
+    'About Us': '/aboutUs',
+    'Events': '/events',
+    'Current Lineup': '/currentLineup',
+    'Subscribe': '/subscribe',
+    'Announcements': '/announcements'
+  };
+
+>>>>>>> Stashed changes
   return (
     <Navbar
       isBordered
@@ -52,6 +69,9 @@ export const Nav = () => {
           </Navbar.Link>
           <Navbar.Link isActive={router.pathname === '/subscribe'} href="/subscribe">
             Subscribe
+          </Navbar.Link>
+          <Navbar.Link isActive={router.pathname === '/announcements'} href="/announcements">
+            Announcements
           </Navbar.Link>
           <Dropdown isBordered>
             <Navbar.Item>
