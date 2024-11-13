@@ -15,6 +15,7 @@ export const Nav = () => {
     'Events',
     'Current Lineup',
     'Subscribe',
+    'Announcements'
     // 'Legal',
   ];
 
@@ -25,6 +26,7 @@ export const Nav = () => {
     'Events': '/events',
     'Current Lineup': '/currentLineup',
     'Subscribe': '/subscribe',
+    'Announcements': '/announcements',
   };
 
   return (
@@ -69,6 +71,9 @@ export const Nav = () => {
           </Navbar.Link>
           <Navbar.Link isActive={router.pathname === '/subscribe'} href="/subscribe">
             Subscribe
+          </Navbar.Link>
+          <Navbar.Link isActive={router.pathname === '/announcements'} href="/announcements">
+            Announcements
           </Navbar.Link>
           <Dropdown isBordered>
             <Navbar.Item>

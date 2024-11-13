@@ -105,6 +105,11 @@ export const Footer = () => {
                            Subscribe
                         </Link>
                      </Box>
+                     <Box as={'li'}>
+                        <Link href="/announcements" passHref>
+                           Announcements
+                        </Link>
+                     </Box>
                   </Box>
                </Flex>
                <Flex
