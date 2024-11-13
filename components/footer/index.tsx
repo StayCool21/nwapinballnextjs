@@ -78,7 +78,6 @@ export const Footer = () => {
                   direction={'column'}
                   align={'center'}
                >
-                  <Text h5>Resources</Text>
                   <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
                      <Box as={'li'}>
                      <Text span css={{ color: '$accents8' }}>
@@ -118,27 +117,22 @@ export const Footer = () => {
                   direction={'column'}
                   align={'center'}
                >
-                  <Text h5>Contact</Text>
+                  <Text h5>Software Engineers</Text>
                   <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
-                           First Link
+                           <a href="https://staycool21.github.io">Luke Welsh</a>
                         </Text>
                      </Box>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
-                           Second Link
-                        </Text>
+                              <a href="https://logannitzsche.com">Logan Nitzsche</a>
+                           </Text>
                      </Box>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
-                           Third Link
-                        </Text>
-                     </Box>
-                     <Box as={'li'}>
-                        <Text span css={{color: '$accents8'}}>
-                           Fourth Link
-                        </Text>
+                              <a href="https://www.linkedin.com/in/kevin-endrijaitis-38a8a4294">Kevin Endrijaitis</a>
+                           </Text>
                      </Box>
                   </Box>
                </Flex>
@@ -147,6 +141,7 @@ export const Footer = () => {
                   direction={'column'}
                   align={'center'}
                >
+                  <br></br>
                   <Text h5 css={{ mt: '$7' }}>Follow Us</Text>
                   <Box as={'ul'} css={{ gap: '$5', listStyle: 'none' }}>
                      <Box as={'li'}>
@@ -167,51 +162,6 @@ export const Footer = () => {
                      </Box>
                   </Box>
                </Flex>
-               {/* <Flex
-                  css={{gap: '$5', w: '250px'}}
-                  direction={'column'}
-                  align={'center'}
-               >
-                  <Text h5>Subscribe</Text>
-                  <Flex
-                  css={{
-                     gap: '$8',
-                     pt: '$4',
-                     justifyContent: 'center', // Center horizontally
-                     alignItems: 'center', // Center vertically
-                  }}
-                  wrap={'wrap'}
-               >
-                  <Input placeholder="Enter your email address" size="lg" />
-                  <Button
-                     css={{
-                        backgroundImage: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
-                        color: 'white', // Ensure the text is readable
-                     }}
-                     >
-                     Sign Up
-                  </Button>
-               </Flex>
-               <Flex
-                  wrap={'wrap'}
-                  css={{
-                     'gap': '$8',
-                     'py': '$7',
-                     '@sm': {
-                        py: '$4',
-                     },
-                  }}
-               >
-                  <Flex
-                     css={{
-                        color: '$accents7',
-                        alignItems: 'center',
-                     }}
-                  >
-                     <CheckIcon /> We don&apos;t share your emails.
-                  </Flex>
-               </Flex>
-               </Flex> */}
             </Flex>
             <Box
                css={{
@@ -247,12 +197,14 @@ export const Footer = () => {
                      }}
                   >
                      <Text span css={{color: '$accents8'}}>
-                        Terms of Service
+                        <Link href="/terms-of-service" passHref>
+                           Terms of Service
+                        </Link>
                      </Text>
                      <Text span css={{color: '$accents8', cursor: 'pointer'}}>
-                     <Link href="/privacy-policy" passHref>
-                        Privacy Policy
-                     </Link>
+                        <Link href="/privacy-policy" passHref>
+                           Privacy Policy
+                        </Link>
                      </Text>
                   </Flex>
                   <Flex

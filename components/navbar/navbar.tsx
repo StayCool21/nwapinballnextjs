@@ -8,8 +8,8 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa'; // Import Facebook and
 
 export const Nav = () => {
   const router = useRouter();
-  const collapseItems = [
-    'Features',
+  const collapseItems: (keyof typeof menuItems)[] = [
+    // 'Features',
     'Home',
     'About Us',
     'Events',
@@ -17,7 +17,26 @@ export const Nav = () => {
     'Subscribe',
 <<<<<<< Updated upstream
     'Legal',
+    // 'Legal',
   ];
+
+  const menuItems = {
+    'Features': '/features',
+    'Home': '/',
+    'About Us': '/aboutUs',
+    'Events': '/events',
+    'Current Lineup': '/currentLineup',
+    'Subscribe': '/subscribe',
+  };
+
+  const menuItems = {
+    'Features': '/features',
+    'Home': '/',
+    'About Us': '/aboutUs',
+    'Events': '/events',
+    'Current Lineup': '/currentLineup',
+    'Subscribe': '/subscribe',
+  };
 
 =======
     'Announcements',
@@ -47,12 +66,20 @@ export const Nav = () => {
       }}
     >
       <Navbar.Brand>
-        <Navbar.Toggle aria-label="toggle navigation" showIn="xs" />
+        <Navbar.Toggle aria-label="toggle navigation" 
+        css={{
+          '@media (max-width: 960px)': {
+            display: 'block',
+          },
+          '@media (min-width: 961px)': {
+            display: 'none',
+          },
+        }} />
         <AcmeLogo />
         <Navbar.Content
           hideIn="sm"
           css={{
-            pl: '6rem',
+            pl: '4rem',
           }}
         >
           <Navbar.Link isActive={router.pathname === '/'} href="/">
@@ -153,83 +180,41 @@ export const Nav = () => {
       </Navbar.Brand>
 
       <Navbar.Collapse>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/"
-          >
-            Home
-          </Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/aboutUs"
-          >
-            About Us
-          </Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/events"
-          >
-            Events
-          </Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/currentLineup"
-          >
-            Current Lineup
-          </Link>
-        </Navbar.CollapseItem>
-        <Navbar.CollapseItem>
-          <Link
-            color="inherit"
-            css={{
-              minWidth: '100%',
-            }}
-            href="/subscribe"
-          >
-            Subscribe
-          </Link>
-        </Navbar.CollapseItem>
+        {collapseItems.map((item, index) => (
+          <Navbar.CollapseItem key={index}>
+            <Link
+              color="inherit"
+              css={{
+                minWidth: '100%',
+              }}
+              href={menuItems[item]}
+            >
+              {item}
+            </Link>
+          </Navbar.CollapseItem>
+        ))}
       </Navbar.Collapse>
       <Navbar.Content>
-        <Navbar.Item hideIn={'xs'}>
+        <Navbar.Item hideIn={'sm'}>
           <Link
             color="inherit"
             css={{
               minWidth: '100%',
             }}
             target="_blank"
-            href="https://www.facebook.com/yourpage"
+            href="https://www.facebook.com/people/NWA-Pinball-Club/61558384277432/"
           >
             <FaFacebook size={24} />
           </Link>
         </Navbar.Item>
-        <Navbar.Item hideIn={'xs'}>
+        <Navbar.Item hideIn={'sm'}>
           <Link
             color="inherit"
             css={{
               minWidth: '100%',
             }}
             target="_blank"
-            href="https://www.instagram.com/yourpage"
+            href="https://www.instagram.com/nwapinballclub/"
           >
             <FaInstagram size={24} />
           </Link>
