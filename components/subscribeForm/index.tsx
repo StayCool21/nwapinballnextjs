@@ -81,6 +81,7 @@ const SubscribeForm = () => {
                   label="Email address"
                   required
                   placeholder="Enter your email address"
+                  size="lg"
                   value={email}
                   onChange={handleEmailChange}
                   helperText={emailError}
