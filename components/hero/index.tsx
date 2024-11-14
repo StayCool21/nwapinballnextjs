@@ -46,7 +46,7 @@ export const Hero = () => {
                            display: 'inline',
                         }}
                      >
-                        The premier pinball arcade&nbsp;
+                        The premier pinball location&nbsp;
                      </Text>
                      <Text
                         h1
@@ -81,7 +81,8 @@ export const Hero = () => {
                      size={'$lg'}
                      span
                   >
-                     Open from 7:30-11:30 PM on Friday nights. Only $20 to experience more than 20
+                     Open tentatively from 7:30-11:30 PM on Fridays (and some Saturdays too...check our Facebook page for updates).
+                     Only $20 to experience more than 20
                      pinball machines as well as arcade games from past and present.
                   </Text>
                </FadeDown>    

@@ -9,6 +9,7 @@ import { Nav } from '../components/navbar/navbar';
 import { Footer } from '../components/footer';
 import Head from 'next/head';
 import { BlurIn } from '../components/blurIn';
+import SubscribeForm from '../components/subscribeForm';
 
 const Subscribe = () => {
   useEffect(() => {
@@ -70,7 +71,8 @@ const Subscribe = () => {
           wrap={'wrap'}
           justify={'center'}
         >
-          <div id="form-container"></div>
+          {/* <div id="form-container"></div> */}
+          <SubscribeForm />
         </Flex>
       </Flex>
       <Footer />
