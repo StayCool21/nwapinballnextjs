@@ -1,4 +1,4 @@
-# Stage 1: Build the application
+# Stage 1: Build the application image
 FROM node:18-alpine AS builder
 
 # Set the working directory
