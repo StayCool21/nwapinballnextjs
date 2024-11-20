@@ -8,7 +8,7 @@ const SubscribeForm = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
   const [startTime, setStartTime] = useState<number>(0);
-  const minTimeToSubmit = 2 * 1000; // Minimum time to submit in milliseconds (e.g., 5 seconds)
+  const minTimeToSubmit = 2 * 1000; // Minimum time to submit in milliseconds (e.g., 2 seconds)
 
   useEffect(() => {
     // Record the time when the component is mounted
@@ -18,29 +18,6 @@ const SubscribeForm = () => {
     if (honeypot) {
       honeypot.value = 'human';
     }
-  }, []);
-
-  useEffect(() => {
-    // Ensure reCAPTCHA script is loaded
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/enterprise.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    script.onload = () => {
-      if (window.grecaptcha) {
-        window.grecaptcha.ready(() => {
-          window.grecaptcha.render('recaptcha-container', {
-            sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-          });
-        });
-      }
-    };
-
-    return () => {
-      document.body.removeChild(script);
-    };
   }, []);
 
   const validateEmail = (email: string) => {
@@ -87,43 +64,19 @@ const SubscribeForm = () => {
       return;
     }
 
-    // Execute reCAPTCHA and get the token
-    if (window.grecaptcha) {
-      window.grecaptcha.ready(async () => {
-        const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit' });
-        const recaptchaVerified = await verifyRecaptcha(token);
-        if (!recaptchaVerified) {
-          setEmailError('reCAPTCHA verification failed. Please try again.');
-          return;
-        }
+    setLoading(true);
+    setSubmitted(true);
+    localStorage.setItem('lastSubmissionTime', currentTime.toString());
 
-        setLoading(true);
-        setSubmitted(true);
-        localStorage.setItem('lastSubmissionTime', currentTime.toString());
-
-        // Decode the form action URL
-        const form = event.currentTarget;
-        const encodedUrl = form.getAttribute('data-action');
-        if (encodedUrl) {
-          const decodedUrl = atob(encodedUrl);
-          form.setAttribute('action', decodedUrl);
-        }
-
-        form.submit();
-      });
+    // Decode the form action URL
+    const form = event.currentTarget;
+    const encodedUrl = form.getAttribute('data-action');
+    if (encodedUrl) {
+      const decodedUrl = atob(encodedUrl);
+      form.setAttribute('action', decodedUrl);
     }
-  };
 
-  const verifyRecaptcha = async (recaptchaResponse: string) => {
-    const response = await fetch('/api/verify-recaptcha', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ recaptchaResponse }),
-    });
-    const data = await response.json();
-    return data.success;
+    form.submit();
   };
 
   return (
@@ -190,7 +143,6 @@ const SubscribeForm = () => {
               <Grid xs={12}>
                 <input type="text" name="url" style={{ display: 'none' }} />
                 <input type="text" name="honeypot" id="honeypot" style={{ display: 'none' }} />
-                <div id="recaptcha-container"></div>
                 <Button
                   type="submit"
                   color="primary"
@@ -226,9 +178,6 @@ const SubscribeForm = () => {
           }
         }}
       ></iframe>
-
-      {/* Add reCAPTCHA script */}
-      <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
     </>
   );
 };
