@@ -20,6 +20,27 @@ const SubscribeForm = () => {
     }
   }, []);
 
+  useEffect(() => {
+    // Ensure reCAPTCHA script is loaded
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/enterprise.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      if (window.grecaptcha) {
+        window.grecaptcha.ready(() => {
+          console.log('reCAPTCHA is ready');
+        });
+      }
+    };
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
@@ -64,27 +85,31 @@ const SubscribeForm = () => {
       return;
     }
 
-    // Verify reCAPTCHA response
-    const recaptchaResponse = (event.currentTarget.elements.namedItem('g-recaptcha-response') as HTMLInputElement).value;
-    const recaptchaVerified = await verifyRecaptcha(recaptchaResponse);
-    if (!recaptchaVerified) {
-      setEmailError('reCAPTCHA verification failed. Please try again.');
-      return;
+    // Execute reCAPTCHA and get the token
+    if (window.grecaptcha) {
+      window.grecaptcha.ready(async () => {
+        const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit' });
+        const recaptchaVerified = await verifyRecaptcha(token);
+        if (!recaptchaVerified) {
+          setEmailError('reCAPTCHA verification failed. Please try again.');
+          return;
+        }
+
+        setLoading(true);
+        setSubmitted(true);
+        localStorage.setItem('lastSubmissionTime', currentTime.toString());
+
+        // Decode the form action URL
+        const form = event.currentTarget;
+        const encodedUrl = form.getAttribute('data-action');
+        if (encodedUrl) {
+          const decodedUrl = atob(encodedUrl);
+          form.setAttribute('action', decodedUrl);
+        }
+
+        form.submit();
+      });
     }
-
-    setLoading(true);
-    setSubmitted(true);
-    localStorage.setItem('lastSubmissionTime', currentTime.toString());
-
-    // Decode the form action URL
-    const form = event.currentTarget;
-    const encodedUrl = form.getAttribute('data-action');
-    if (encodedUrl) {
-      const decodedUrl = atob(encodedUrl);
-      form.setAttribute('action', decodedUrl);
-    }
-
-    form.submit();
   };
 
   const verifyRecaptcha = async (recaptchaResponse: string) => {
@@ -201,7 +226,7 @@ const SubscribeForm = () => {
       ></iframe>
 
       {/* Add reCAPTCHA script */}
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
     </>
   );
 };
