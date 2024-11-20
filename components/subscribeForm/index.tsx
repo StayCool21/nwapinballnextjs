@@ -1,4 +1,10 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
+
+declare global {
+  interface Window {
+    onloadCallback: () => void;
+  }
+}
 import { Button, Card, Grid, Input, Text, FormElement } from '@nextui-org/react';
 import { Box } from '../styles/box';
 
@@ -21,20 +27,21 @@ const SubscribeForm = () => {
   }, []);
 
   useEffect(() => {
-    // Ensure reCAPTCHA script is loaded
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/enterprise.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    script.onload = () => {
+    // Define the onload callback function
+    window.onloadCallback = () => {
       if (window.grecaptcha) {
-        window.grecaptcha.ready(() => {
-          console.log('reCAPTCHA is ready');
+        window.grecaptcha.render('recaptcha-container', {
+          sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
         });
       }
     };
+
+    // Ensure reCAPTCHA script is loaded
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
 
     return () => {
       document.body.removeChild(script);
@@ -188,7 +195,7 @@ const SubscribeForm = () => {
               <Grid xs={12}>
                 <input type="text" name="url" style={{ display: 'none' }} />
                 <input type="text" name="honeypot" id="honeypot" style={{ display: 'none' }} />
-                <div className="g-recaptcha" data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}></div>
+                <div id="recaptcha-container"></div>
                 <Button
                   type="submit"
                   color="primary"
@@ -226,7 +233,7 @@ const SubscribeForm = () => {
       ></iframe>
 
       {/* Add reCAPTCHA script */}
-      <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+      <script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit" async defer></script>
     </>
   );
 };
