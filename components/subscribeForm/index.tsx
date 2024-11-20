@@ -69,7 +69,8 @@ const SubscribeForm = () => {
     localStorage.setItem('lastSubmissionTime', currentTime.toString());
 
     // Set the form action URL from environment variable
-    const form = event.currentTarget;
+    // This is required to submit the form to Google Forms
+    const form = event.currentTarget; 
     const formUrl = process.env.NEXT_PUBLIC_SUB_FORM_URL;
     if (formUrl) {
       form.setAttribute('action', formUrl);
