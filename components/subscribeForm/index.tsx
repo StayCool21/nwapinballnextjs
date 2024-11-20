@@ -68,12 +68,16 @@ const SubscribeForm = () => {
     setSubmitted(true);
     localStorage.setItem('lastSubmissionTime', currentTime.toString());
 
-    // Decode the form action URL
+    // Set the form action URL from environment variable
     const form = event.currentTarget;
-    const encodedUrl = form.getAttribute('data-action');
-    if (encodedUrl) {
-      const decodedUrl = atob(encodedUrl);
-      form.setAttribute('action', decodedUrl);
+    const formUrl = process.env.NEXT_SUB_FORM_URL;
+    if (formUrl) {
+      form.setAttribute('action', formUrl);
+    } else {
+      console.error('Form URL is not set in environment variables.');
+      setLoading(false);
+      setEmailError('Failed to submit the form. Please try again later.');
+      return;
     }
 
     form.submit();
@@ -95,7 +99,6 @@ const SubscribeForm = () => {
         <Card.Body>
           <Box
             as="form"
-            data-action="aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZm9ybXMvZC9lLzFGQUlwUUxTZHNRTUZrZjhHT3NTVEw0Zlh0bUtiM2hnQ1BqSTZEM1U4THVoWGJ6dG5kOUFwU2Q2US9mb3JtUmVzcG9uc2U="
             method="POST"
             target="hidden_iframe"
             onSubmit={handleSubmit}
