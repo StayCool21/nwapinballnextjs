@@ -70,7 +70,7 @@ const SubscribeForm = () => {
 
     // Set the form action URL from environment variable
     const form = event.currentTarget;
-    const formUrl = process.env.NEXT_PUBLIC_FORM_URL;
+    const formUrl = process.env.NEXT_SUB_FORM_URL;
     if (formUrl) {
       form.setAttribute('action', formUrl);
     } else {
