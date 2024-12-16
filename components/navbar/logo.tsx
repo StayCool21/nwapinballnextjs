@@ -7,6 +7,7 @@ export const AcmeLogo = () => (
       width={150}
       height={25}
       quality={100}
+      unoptimized
       className=""
    />
 );

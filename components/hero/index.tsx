@@ -98,7 +98,9 @@ export const Hero = () => {
                <Image src="/NWAPinballFullSmallerBack.png" alt="NWA Pinball Logo"
                width={775}
                height={500}
-               quality={100} />
+               quality={100} 
+               unoptimized
+               />
             </Box>
          </Flex>
          <Divider

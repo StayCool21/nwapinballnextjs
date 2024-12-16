@@ -5,11 +5,10 @@ import { Flex } from '../styles/flex';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const EventInquiryForm: React.FC = () => {
+const DonateInquiryForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
   const [isConsentGiven, setIsConsentGiven] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -30,14 +29,10 @@ const EventInquiryForm: React.FC = () => {
     setIsConsentGiven(!isConsentGiven);
   };
 
-  const handleDateChange = (date: Date | null) => {
-    setSelectedDate(date);
-  };
-
   return (
     <Card css={{ maxWidth: '600px', margin: '0 auto', backgroundColor: 'transparent', border: '2px solid orange' }}>
       <Card.Header>
-        <Text h2>Event Inquiry Form</Text>
+        <Text h2>Donation Inquiry Form</Text>
       </Card.Header>
       <Card.Body>
         <Box as="form">
@@ -97,64 +92,10 @@ const EventInquiryForm: React.FC = () => {
               />
             </Grid>
             <Grid xs={12}>
-              <div style={{ width: '100%' }}>
-                {/* FIXME: Extend the below field all the way to the width of the form!!! */}
-                <DatePicker
-                  id="date-picker"
-                  selected={selectedDate}
-                  onChange={handleDateChange}
-                  dateFormat="MM/dd/yyyy"
-                  placeholderText="MM/DD/YYYY"
-                  required
-                  className="date-picker-input"
-                  customInput={
-                    <Input
-                      fullWidth
-                      size="lg"
-                      label="Please provide a date (NWA Pinball-sanctioned events take priority)"
-                      css={{
-                        '& input': {
-                          borderColor: 'var(--input-border-color)',
-                          color: '$text',
-                          backgroundColor: 'var(--input-bg-color)',
-                        },
-                      }}
-                    />
-                  }
-                />
-              </div>
-            </Grid>
-            <Grid xs={12}>
-              <Text css={{ paddingRight: '1rem' }}>Will you require a table for refreshments?</Text>
-              <Flex css={{ gap: '1rem', alignItems: 'center' }}>
-                <label>
-                  <input type="radio" name="refreshments" value="yes" required />
-                  Yes
-                </label>
-                <label>
-                  <input type="radio" name="refreshments" value="no" required />
-                  No
-                </label>
-              </Flex>
-            </Grid>
-            <Grid xs={12}>
-              <Text css={{ paddingRight: '1rem' }}>Would you like us to run a game tournament for your guests?</Text>
-              <Flex css={{ gap: '1rem', alignItems: 'center' }}>
-                <label>
-                  <input type="radio" name="tournament" value="yes" />
-                  Yes
-                </label>
-                <label>
-                  <input type="radio" name="tournament" value="no" />
-                  No
-                </label>
-              </Flex>
-            </Grid>
-            <Grid xs={12}>
               <Textarea
                 fullWidth
                 label="Message"
-                placeholder="Enter multiple dates if you have a preference, or any other details you'd like to provide so we can assist you better."
+                placeholder="Any other comments? List them here"
                 css={{
                   '& textarea': {
                     borderColor: 'var(--input-border-color)',
@@ -204,4 +145,4 @@ const EventInquiryForm: React.FC = () => {
   );
 };
 
-export default EventInquiryForm;
+export default DonateInquiryForm;
