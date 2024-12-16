@@ -10,8 +10,24 @@ import { MdFavorite } from 'react-icons/md'; // Importing a favorite icon from M
 
 export const Nav = () => {
   const router = useRouter();
+  const currentPath = router.pathname;
+
+  interface MenuItems {
+    'Features': string;
+    'Home': string;
+    'About Us': string;
+    'Parties': string;
+    'Donate': string;
+    'Current Lineup': string;
+    'Subscribe': string;
+    'Announcements': string;
+  }
+
+  const handleItemClick = (url: string): void => {
+    router.push(url);
+  }
+
   const collapseItems: (keyof typeof menuItems)[] = [
-    // 'Features',
     'Home',
     'About Us',
     'Parties',
@@ -19,7 +35,6 @@ export const Nav = () => {
     'Current Lineup',
     'Subscribe',
     'Announcements'
-    // 'Legal',
   ];
 
   const menuItems = {
@@ -67,9 +82,6 @@ export const Nav = () => {
           <Navbar.Link isActive={router.pathname === '/aboutUs'} href="/aboutUs">
             About Us
           </Navbar.Link>
-          {/* <Navbar.Link isActive={router.pathname === '/events'} href="/events">
-            Parties
-          </Navbar.Link> */}
           <Navbar.Link isActive={router.pathname === '/currentLineup'} href="/currentLineup">
             Current Lineup
           </Navbar.Link>
@@ -97,6 +109,7 @@ export const Nav = () => {
             </Navbar.Item>
             <Dropdown.Menu
               aria-label="ACME features"
+              onAction={(key) => handleItemClick(key as string)}
               css={{
                 '$$dropdownMenuWidth': '340px',
                 '$$dropdownItemHeight': '70px',
@@ -114,58 +127,29 @@ export const Nav = () => {
               }}
             >
               <Dropdown.Item
-                key="parties"
+                key="/events"
                 showFullDescription
                 description="We host parties for all occasions: birthdays, anniversaries, and more!"
                 icon={<FaBirthdayCake size={26} />}
-                // css={{paddingRight: '10px' }}
+                textValue="Parties"
+                css={{
+                  backgroundColor: currentPath === '/events' ? '$accents2' : 'transparent',
+                }}
               >
-                <Navbar.Link isActive={router.pathname === '/events'} href="/events">
-                  Parties
-                </Navbar.Link>
+                Parties
               </Dropdown.Item>
               <Dropdown.Item
-                key="donate"
+                key="/donate"
                 showFullDescription
                 description="Show your support by donating!"
                 icon={<MdFavorite size={26} />}
+                textValue="Donate"
+                css={{
+                  backgroundColor: currentPath === '/donate' ? '$accents2' : 'transparent',
+                }}
               >
-                <Navbar.Link isActive={router.pathname === '/donate'} href="/donate">
-                  Donate
-                </Navbar.Link>
+                Donate
               </Dropdown.Item>
-              {/* <Dropdown.Item
-                key="usage_metrics"
-                showFullDescription
-                description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
-                icon={icons.activity}
-              >
-                Usage Metrics
-              </Dropdown.Item>
-              <Dropdown.Item
-                key="production_ready"
-                showFullDescription
-                description="ACME runs on ACME, join us and others serving requests at web scale."
-                icon={icons.flash}
-              >
-                Production Ready
-              </Dropdown.Item>
-              <Dropdown.Item
-                key="+99_uptime"
-                showFullDescription
-                description="Applications stay on the grid with high availability and high uptime guarantees."
-                icon={icons.server}
-              >
-                +99% Uptime
-              </Dropdown.Item>
-              <Dropdown.Item
-                key="supreme_support"
-                showFullDescription
-                description="Overcome any challenge with a supporting team ready to respond."
-                icon={icons.user}
-              >
-                +Supreme Support
-              </Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
         </Navbar.Content>
