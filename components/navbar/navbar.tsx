@@ -5,6 +5,8 @@ import { icons } from './icons';
 import { AcmeLogo } from './logo';
 import { useRouter } from 'next/router';
 import { FaFacebook, FaInstagram } from 'react-icons/fa'; // Import Facebook and Instagram icons
+import { FaBirthdayCake } from 'react-icons/fa'; // Importing a birthday hat icon from Font Awesome
+import { MdFavorite } from 'react-icons/md'; // Importing a favorite icon from Material Design Icons
 
 export const Nav = () => {
   const router = useRouter();
@@ -13,6 +15,7 @@ export const Nav = () => {
     'Home',
     'About Us',
     'Parties',
+    'Donate',
     'Current Lineup',
     'Subscribe',
     'Announcements'
@@ -24,6 +27,7 @@ export const Nav = () => {
     'Home': '/',
     'About Us': '/aboutUs',
     'Parties': '/events',
+    'Donate': '/donate',
     'Current Lineup': '/currentLineup',
     'Subscribe': '/subscribe',
     'Announcements': '/announcements',
@@ -63,9 +67,9 @@ export const Nav = () => {
           <Navbar.Link isActive={router.pathname === '/aboutUs'} href="/aboutUs">
             About Us
           </Navbar.Link>
-          <Navbar.Link isActive={router.pathname === '/events'} href="/events">
+          {/* <Navbar.Link isActive={router.pathname === '/events'} href="/events">
             Parties
-          </Navbar.Link>
+          </Navbar.Link> */}
           <Navbar.Link isActive={router.pathname === '/currentLineup'} href="/currentLineup">
             Current Lineup
           </Navbar.Link>
@@ -88,7 +92,7 @@ export const Nav = () => {
                 iconRight={icons.chevron}
                 ripple={false}
               >
-                Features
+                Inquiries
               </Dropdown.Button>
             </Navbar.Item>
             <Dropdown.Menu
@@ -99,7 +103,7 @@ export const Nav = () => {
                 '& .nextui-dropdown-item': {
                   py: '$4',
                   svg: {
-                    color: '$secondary',
+                    color: 'orange',
                     mr: '$4',
                   },
                   '& .nextui-dropdown-item-content': {
@@ -110,14 +114,27 @@ export const Nav = () => {
               }}
             >
               <Dropdown.Item
-                key="autoscaling"
+                key="parties"
                 showFullDescription
-                description="ACME scales apps to meet user demand, automagically, based on load."
-                icon={icons.scale}
+                description="We host parties for all occasions: birthdays, anniversaries, and more!"
+                icon={<FaBirthdayCake size={26} />}
+                // css={{paddingRight: '10px' }}
               >
-                Autoscaling
+                <Navbar.Link isActive={router.pathname === '/events'} href="/events">
+                  Parties
+                </Navbar.Link>
               </Dropdown.Item>
               <Dropdown.Item
+                key="donate"
+                showFullDescription
+                description="Show your support by donating!"
+                icon={<MdFavorite size={26} />}
+              >
+                <Navbar.Link isActive={router.pathname === '/donate'} href="/donate">
+                  Donate
+                </Navbar.Link>
+              </Dropdown.Item>
+              {/* <Dropdown.Item
                 key="usage_metrics"
                 showFullDescription
                 description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
@@ -148,7 +165,7 @@ export const Nav = () => {
                 icon={icons.user}
               >
                 +Supreme Support
-              </Dropdown.Item>
+              </Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
         </Navbar.Content>
