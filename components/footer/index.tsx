@@ -117,7 +117,7 @@ export const Footer = () => {
                   direction={'column'}
                   align={'center'}
                >
-                  <Text h5>Software Engineers</Text>
+                  <Text h5 css={{ mt: '$7' }}>Software Engineers</Text>
                   <Box as={'ul'} css={{gap: '$5', listStyle: 'none'}}>
                      <Box as={'li'}>
                         <Text span css={{color: '$accents8'}}>
@@ -133,6 +133,9 @@ export const Footer = () => {
                         <Text span css={{color: '$accents8'}}>
                               <a href="https://www.linkedin.com/in/kevin-endrijaitis-38a8a4294">Kevin Endrijaitis</a>
                            </Text>
+                     </Box>
+                     <Box as={'li'}>
+                        <p>&nbsp;</p>
                      </Box>
                   </Box>
                </Flex>
