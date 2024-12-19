@@ -41,7 +41,7 @@ const Announcements = () => {
         >
           {/* Facebook Plugin via Iframe */}
           <iframe
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpeople%2FNWA-Pinball-Club%2F61558384277432%2F&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FNWA-Pinball-Club-61558384277432%2F&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
             width="500"
             height="700"
             style={{ border: 'none', overflow: 'hidden' }}
