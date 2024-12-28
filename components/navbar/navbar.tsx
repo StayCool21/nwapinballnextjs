@@ -12,6 +12,12 @@ export const Nav = () => {
   const router = useRouter();
   const currentPath = router.pathname;
 
+  const gradientStyle = {
+    background: 'radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #FF0049FF 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+  };
+
   interface MenuItems {
     'Features': string;
     'Home': string;
@@ -48,6 +54,7 @@ export const Nav = () => {
     'Announcements': '/announcements',
   };
 
+  
   return (
     <Navbar
       isBordered
@@ -76,19 +83,19 @@ export const Nav = () => {
             pl: '4rem',
           }}
         >
-          <Navbar.Link isActive={router.pathname === '/'} href="/">
+          <Navbar.Link isActive={currentPath === '/'} href="/" css={currentPath === '/' ? gradientStyle : {}}>
             Home
           </Navbar.Link>
-          <Navbar.Link isActive={router.pathname === '/aboutUs'} href="/aboutUs">
+          <Navbar.Link isActive={currentPath === '/aboutUs'} href="/aboutUs" css={currentPath === '/aboutUs' ? gradientStyle : {}}>
             About Us
           </Navbar.Link>
-          <Navbar.Link isActive={router.pathname === '/currentLineup'} href="/currentLineup">
+          <Navbar.Link isActive={currentPath === '/currentLineup'} href="/currentLineup" css={currentPath === '/currentLineup' ? gradientStyle : {}}>
             Current Lineup
           </Navbar.Link>
-          <Navbar.Link isActive={router.pathname === '/subscribe'} href="/subscribe">
+          <Navbar.Link isActive={currentPath === '/subscribe'} href="/subscribe" css={currentPath === '/subscribe' ? gradientStyle : {}}>
             Subscribe
           </Navbar.Link>
-          <Navbar.Link isActive={router.pathname === '/announcements'} href="/announcements">
+          <Navbar.Link isActive={currentPath === '/announcements'} href="/announcements" css={currentPath === '/announcements' ? gradientStyle : {}}>
             Announcements
           </Navbar.Link>
           <Dropdown isBordered>
