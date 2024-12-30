@@ -27,6 +27,7 @@ export const Nav = () => {
     'Current Lineup': string;
     'Subscribe': string;
     'Announcements': string;
+    'Tournaments': string;
   }
 
   const handleItemClick = (url: string): void => {
@@ -40,7 +41,8 @@ export const Nav = () => {
     'Donate',
     'Current Lineup',
     'Subscribe',
-    'Announcements'
+    'Announcements',
+    'Tournaments'
   ];
 
   const menuItems = {
@@ -52,6 +54,7 @@ export const Nav = () => {
     'Current Lineup': '/currentLineup',
     'Subscribe': '/subscribe',
     'Announcements': '/announcements',
+    'Tournaments': '/tournaments',
   };
 
   
@@ -97,6 +100,9 @@ export const Nav = () => {
           </Navbar.Link>
           <Navbar.Link isActive={currentPath === '/announcements'} href="/announcements" css={currentPath === '/announcements' ? gradientStyle : {}}>
             Announcements
+          </Navbar.Link>
+          <Navbar.Link isActive={currentPath === '/tournaments'} href="/tournaments" css={currentPath === '/tournaments' ? gradientStyle : {}}>
+            Tournaments
           </Navbar.Link>
           <Dropdown isBordered>
             <Navbar.Item>
