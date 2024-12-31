@@ -3,6 +3,7 @@ import React from 'react';
 import { CheckIcon } from '../components/icons/CheckIcon';
 import { QuotesIcon } from '../components/icons/QuotesIcon';
 import { Box } from '../components/styles/box';
+import Image from 'next/image';
 import { Flex } from '../components/styles/flex';
 import { Layout } from '../components/navbar/layout';
 import { Nav } from '../components/navbar/navbar';
@@ -50,6 +51,12 @@ const Tournaments = () => {
                 the IFPA calendar
             </a>
           </Text>
+          <Text h4 css={{ textAlign: 'center' }}>
+            We are a proud member of Stern Army. For Stern Army tournaments, visit{' '}
+            <a href="https://sternpinball.com/stern-army/" target="_blank" rel="noopener noreferrer">
+                the Stern Army page
+            </a>
+          </Text>
         </Flex>
 
         <Flex
@@ -58,6 +65,65 @@ const Tournaments = () => {
           justify={'center'}
         >
           <TournamentsCalendar />
+        </Flex>
+        <Flex
+            css={{
+                gap: '2rem',
+                width: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'relative',
+            }}
+            >
+            <Box
+                css={{
+                display: 'flex',
+                alignItems: 'center',
+                '& img': {
+                    width: '155px',
+                    objectFit: 'contain',
+                },
+                }}
+            >
+                <a href="https://www.sternpinball.com/stern-army/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                    src="/Stern+Army+IFPA+logo.png"
+                    alt="Stern Army IFPA logo"
+                    width={155}
+                    height={100}
+                    quality={100}
+                    unoptimized
+                    />
+                </a>
+            </Box>
+            <Box
+                css={{
+                width: '1px',
+                height: '100px',
+                backgroundColor: 'white',
+                }}
+            />
+            <Box
+                css={{
+                display: 'flex',
+                alignItems: 'center',
+                '& img': {
+                    width: '155px',
+                    objectFit: 'contain',
+                },
+                }}
+            >
+                <a href="https://www.ifpapinball.com/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                    src="/ifpapinball.png"
+                    alt="IFPA logo"
+                    width={155}
+                    height={100}
+                    quality={100}
+                    unoptimized
+                    />
+                </a>
+            </Box>
         </Flex>
       </Flex>
       <Footer />

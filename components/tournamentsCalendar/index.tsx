@@ -39,10 +39,21 @@ const TournamentsCalendar: React.FC = () => {
             const description = event.description;
             const urlMatch = description.match(/https?:\/\/[^\s]+/);
             const url = urlMatch ? urlMatch[0] : null;
+
+            // Adjust the start and end dates to account for time zone differences
+            const startDate = new Date(event.startDate.toString());
+            const endDate = new Date(event.endDate.toString());
+
+            // Check if the event is an all-day event and adjust the dates accordingly
+            if (event.startDate.isDate) {
+              startDate.setDate(startDate.getDate() + 1);
+              endDate.setDate(endDate.getDate() + 1);
+            }
+
             return {
               title: event.summary,
-              start: new Date(event.startDate.toString()),
-              end: new Date(event.endDate.toString()),
+              start: startDate,
+              end: endDate,
               allDay: event.startDate.isDate,
               description: url,
               location: event.location,
