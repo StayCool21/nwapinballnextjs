@@ -46,8 +46,8 @@ const Tournaments = () => {
           </Text>
           <Text h4 css={{ textAlign: 'center' }}>
             To find other IFPA tournaments, visit{' '}
-            <a href="https://www.ifpapinball.com/calendar/" target="_blank">
-              the IFPA calendar.
+            <a href="https://www.ifpapinball.com/calendar/" target="_blank" rel="noopener noreferrer">
+                the IFPA calendar
             </a>
           </Text>
         </Flex>
